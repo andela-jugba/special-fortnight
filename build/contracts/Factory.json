@@ -1,0 +1,332 @@
+{
+  "contractName": "Factory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "createNewAdoption",
+      "outputs": [
+        {
+          "name": "created",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6104918061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315b1725714610046575b600080fd5b341561005157600080fd5b61005961009b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600080336100a76100fc565b808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050604051809103906000f08015156100f357600080fd5b90508091505090565b6040516103598061010d8339019056006060604052341561000f57600080fd5b6040516020806103598339810160405280805190602001909190505080601060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506102dd8061007c6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a7230582049d18d4afe9d7e1f5f2095b0a18d08740f675afb164d111ea68d0003470be20c0029a165627a7a7230582006cca9241f9c0f7377fc8a5b7c1820d07473a5813a04f92e58261b8a813c103e0029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315b1725714610046575b600080fd5b341561005157600080fd5b61005961009b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600080336100a76100fc565b808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050604051809103906000f08015156100f357600080fd5b90508091505090565b6040516103598061010d8339019056006060604052341561000f57600080fd5b6040516020806103598339810160405280805190602001909190505080601060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506102dd8061007c6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a7230582049d18d4afe9d7e1f5f2095b0a18d08740f675afb164d111ea68d0003470be20c0029a165627a7a7230582006cca9241f9c0f7377fc8a5b7c1820d07473a5813a04f92e58261b8a813c103e0029",
+  "sourceMap": "51:158:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "51:158:1:-;;;;;;;;;;;;;;;;;;;;;;;;74:133;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:15;145:10;171;158:24;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;145:37;;199:1;192:8;;74:133;;:::o;51:158::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\nimport \"./Adoption.sol\";\n\ncontract Factory {\n    function createNewAdoption() public returns(address created) {\n        Adoption a = new Adoption(msg.sender);\n        return a;\n    }\n}\n",
+  "sourcePath": "/Users/jugba/workspace/crypto/pet-shop-tut/contracts/Factory.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/jugba/workspace/crypto/pet-shop-tut/contracts/Factory.sol",
+      "exportedSymbols": {
+        "Factory": [
+          75
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 57,
+        "name": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 56,
+          "absolutePath": "/Users/jugba/workspace/crypto/pet-shop-tut/contracts/Adoption.sol",
+          "file": "./Adoption.sol",
+          "scope": 76,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 58,
+        "name": "ImportDirective",
+        "src": "25:24:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            55
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            75
+          ],
+          "name": "Factory",
+          "scope": 76
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "createNewAdoption",
+              "payable": false,
+              "scope": 75,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 59,
+                "name": "ParameterList",
+                "src": "100:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "created",
+                      "scope": 74,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 60,
+                        "name": "ElementaryTypeName",
+                        "src": "118:7:1"
+                      }
+                    ],
+                    "id": 61,
+                    "name": "VariableDeclaration",
+                    "src": "118:15:1"
+                  }
+                ],
+                "id": 62,
+                "name": "ParameterList",
+                "src": "117:17:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        64
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "a",
+                          "scope": 74,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "contract Adoption",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Adoption",
+                              "referencedDeclaration": 55,
+                              "type": "contract Adoption"
+                            },
+                            "id": 63,
+                            "name": "UserDefinedTypeName",
+                            "src": "145:8:1"
+                          }
+                        ],
+                        "id": 64,
+                        "name": "VariableDeclaration",
+                        "src": "145:10:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "contract Adoption",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "function (address) returns (contract Adoption)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "contractScope": null,
+                                  "name": "Adoption",
+                                  "referencedDeclaration": 55,
+                                  "type": "contract Adoption"
+                                },
+                                "id": 65,
+                                "name": "UserDefinedTypeName",
+                                "src": "162:8:1"
+                              }
+                            ],
+                            "id": 66,
+                            "name": "NewExpression",
+                            "src": "158:12:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 87,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 67,
+                                "name": "Identifier",
+                                "src": "171:3:1"
+                              }
+                            ],
+                            "id": 68,
+                            "name": "MemberAccess",
+                            "src": "171:10:1"
+                          }
+                        ],
+                        "id": 69,
+                        "name": "FunctionCall",
+                        "src": "158:24:1"
+                      }
+                    ],
+                    "id": 70,
+                    "name": "VariableDeclarationStatement",
+                    "src": "145:37:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 62
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 64,
+                          "type": "contract Adoption",
+                          "value": "a"
+                        },
+                        "id": 71,
+                        "name": "Identifier",
+                        "src": "199:1:1"
+                      }
+                    ],
+                    "id": 72,
+                    "name": "Return",
+                    "src": "192:8:1"
+                  }
+                ],
+                "id": 73,
+                "name": "Block",
+                "src": "135:72:1"
+              }
+            ],
+            "id": 74,
+            "name": "FunctionDefinition",
+            "src": "74:133:1"
+          }
+        ],
+        "id": 75,
+        "name": "ContractDefinition",
+        "src": "51:158:1"
+      }
+    ],
+    "id": 76,
+    "name": "SourceUnit",
+    "src": "0:210:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1516403075320": {
+      "events": {},
+      "links": {},
+      "address": "0xb0d8143d3abefea85f891353d89bf516a0d8bdc3"
+    },
+    "1516418957600": {
+      "events": {},
+      "links": {},
+      "address": "0xb163005fb5e1913e7d1f0759ab1aa71b0affca35"
+    },
+    "1516419699827": {
+      "events": {},
+      "links": {},
+      "address": "0x743422b1c78e55ecc5625a0513f0c85619af0b64"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-20T03:41:56.245Z"
+}
